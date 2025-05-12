@@ -23,6 +23,50 @@
 
   <!-- تنسيقات CSS -->
   <style>
+  
+  
+  .menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav#main-nav {
+    display: none;
+    width: 100%;
+    background-color: #444;
+    margin-top: 10px;
+  }
+
+  nav#main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  nav#main-nav ul li {
+    border-top: 1px solid #555;
+    padding: 10px 20px;
+  }
+
+  nav#main-nav ul li a {
+    color: white;
+  }
+
+  nav#main-nav.active {
+    display: block;
+  }
+}
+
+  
+  
+  
     * {
       box-sizing: border-box;
       margin: 0;
@@ -297,24 +341,30 @@
 
 
   <header>
-    <div class="logo">شريف عامر</div>
-    <div class="social-icons">
-      <a href="https://www.facebook.com/share/15V8JpxiUf/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/sherif684?igsh=bGtqdzM4ZmI3ajE3&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/966549758154" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <nav>
-      <ul>
+  <div class="logo">شريف عامر</div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <nav id="main-nav">
+    <ul>
       <li><a href="#">الرئيسية</a></li>
       <li><a href="#about">عنّي</a></li>
       <li><a href="#projects">مشاريع شاركت في تنفيذها</a></li>
       <li><a href="#certificates">الشهادات</a></li>
       <li><a href="#contact">اتصل بي</a></li>
-<li><a href="https://drive.google.com/file/d/1U1Dlxtv2xYPMWuM0JpB7-K4ZhTQu-xLr/view?usp=sharing" target="_blank">تحميل السيرة الذاتية</a></li>
+      <li><a href="https://drive.google.com/file/d/1U1Dlxtv2xYPMWuM0JpB7-K4ZhTQu-xLr/view?usp=sharing" target="_blank">تحميل السيرة الذاتية</a></li>
     </ul>
   </nav>
-    </nav>
-  </header>
+
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/15V8JpxiUf/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/sherif684?igsh=bGtqdzM4ZmI3ajE3&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/966549758154" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</header>
+
 
   <section class="hero">
     <div class="hero-content">
@@ -504,6 +554,14 @@ Technology, sohag | 2019
     <p>أو الاتصال مباشرة:</p>
     <a href="tel:+966549758154">+966549758154</a>
   </section>
+
+<script>
+  function toggleMenu() {
+    var nav = document.getElementById("main-nav");
+    nav.classList.toggle("active");
+  }
+</script>
+
 
 </body>
 </html>
